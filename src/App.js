@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App()
+{
+    const [ tasks, setTasks ] = useState([]);
+    const [ inputText, setInputText ] = useState("");
+    const [ showError, setShowError ] = useState(false);
+
+
+  const toogleTask = (e, id) => 
+  {
+    const currentTask = tasks.filter(task =>task.id === id)[0];
+    const otherTasks = tasks.filter(task => tasks.id !== id);
+
+
+    currentTask.isFinished = !currentTask.isFinished;
+    setTasks([currentTask, ...otherTasks]);
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default App;
