@@ -1,7 +1,6 @@
 import { useState } from "react";
 function AddTask({setTasks}) {
     const [newTask, setNewTask] = useState('')
-   console.log('AddTask')
     const createId = () => {
         return Math.random().toString(16).substr(2,8);
     }

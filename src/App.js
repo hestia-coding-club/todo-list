@@ -4,7 +4,6 @@ import AddTask from "./components/AddTask";
 
 function App()
 {
-  console.log('App')
     const [ tasks, setTasks ] = useState([]);
     const [ inputText, setInputText ] = useState("");
     const [ showError, setShowError ] = useState(false);
