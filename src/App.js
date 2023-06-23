@@ -1,7 +1,10 @@
 import React, {useState} from "react";
+import AddTask from "./components/AddTask";
+
 
 function App()
 {
+  console.log('App')
     const [ tasks, setTasks ] = useState([]);
     const [ inputText, setInputText ] = useState("");
     const [ showError, setShowError ] = useState(false);
@@ -17,9 +20,14 @@ function App()
     setTasks([currentTask, ...otherTasks]);
   }
 
+ return <div>
+  <AddTask setTasks={setTasks}/>
+  <ul>{tasks.map(task => <li key={task.id}>{task.text}</li> )}</ul>
+
+ </div>
+  
+ 
 }
-
-
 
 
 
